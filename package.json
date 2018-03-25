@@ -1,0 +1,46 @@
+{
+  "name": "pipeline-slack-notifier",
+  "version": "1.0.0",
+  "description": "Use AWS Lambda to push CodePipeline state changes to Slack",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thebatch/pipeline-slack-notifier.git"
+  },
+  "scripts": {
+    "test-watch": "node --inspect ./node_modules/.bin/jest --watch",
+    "test": "./node_modules/.bin/jest",
+    "deploy:prod": "export ENVIRONMENT=prod && npm run deploy",
+    "deploy:dev": "export ENVIRONMENT=dev && npm run deploy",
+    "deploy": "./node_modules/serverless/bin/serverless deploy --stage ${ENVIRONMENT} --slack-url ${SLACK_URL}"
+  },
+  "author": "Martin Stapel",
+  "license": "MIT",
+  "dependencies": {
+    "babel-runtime": "^6.26.0",
+    "node-fetch": "^1.7.3",
+    "source-map-support": "^0.5.4"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.2",
+    "babel-jest": "^22.1.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-source-map-support": "^1.0.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-3": "^6.24.1",
+    "eslint": "^4.10.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-google": "^0.9.1",
+    "eslint-plugin-babel": "^4.1.2",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-promise": "^3.7.0",
+    "jest": "^22.1.4",
+    "regenerator-runtime": "^0.11.1",
+    "serverless": "^1.25.0",
+    "serverless-webpack": "^4.0.0",
+    "webpack": "^3.8.1",
+    "webpack-node-externals": "^1.6.0"
+  }
+}
