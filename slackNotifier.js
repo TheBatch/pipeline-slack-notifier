@@ -53,4 +53,4 @@ const mapEventToSlackPayload = (event) => {
   return payload;
 };
 
-export { notifySlack, mapEventToSlackPayload };
+export {notifySlack, mapEventToSlackPayload};
